@@ -1,7 +1,7 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
    environment {
-        PATH = "/usr/local/bin:/usr/local/go/bin:${env.PATH}"
+        PATH="$PATH:/usr/local/bin:/usr/local/go/bin"
     }
  
     agent { docker { image 'golang:1.24.4-alpine3.22' } }
