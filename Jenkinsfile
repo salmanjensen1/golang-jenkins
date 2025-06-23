@@ -3,10 +3,10 @@ pipeline {
     agent { docker { image 'golang:1.24.4-alpine3.22' } }
     stages {
         stage('build') {
-            steps {
-                environment {
+            environment {
                 PATH = "/usr/local/bin:/usr/local/go/bin:${env.PATH}"
             }
+            steps {
                 sh '''
                 echo $PATH
                 which docker
