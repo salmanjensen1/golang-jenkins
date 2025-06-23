@@ -4,6 +4,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                environment {
+                PATH = "/usr/local/bin:/usr/local/go/bin:${env.PATH}"
+            }
+                sh '''
+                echo $PATH
+                which docker
+                docker --version
+                '''
                 sh 'go version'
                 sh 'Hello world'
                 sh '''
