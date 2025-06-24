@@ -14,7 +14,7 @@ pipeline {
                 docker --version
                 '''
                 sh 'go version'
-                sh 'Hello world'
+                echo 'Hello world'
                 sh '''
                     echo "Multi Line"
                     htop
