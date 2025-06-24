@@ -4,11 +4,7 @@ pipeline {
         PATH="$PATH:/usr/local/bin:/usr/local/go/bin"
     }
  
-<<<<<<< HEAD
     agent any
-=======
-    //agent { docker { image 'golang:1.24.4-alpine3.22' } }
->>>>>>> 1d44a939309ecd690bd804221231d17306cbdcbb
     stages {
         stage('build') {
             steps {
