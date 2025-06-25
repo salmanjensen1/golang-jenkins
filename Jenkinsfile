@@ -17,19 +17,9 @@ pipeline {
                 echo 'Hello world'
                 sh '''
                     echo "Multi Line"
-                    htop
+                    top
                     ls -lah
                 '''
-            }
-        }
-        stage('retry/timeout'){
-            steps{
-                retry(3){
-                    sh './flakey-deploy.sh'
-                }
-                timeout(time:3, unit:'MINUTES'){
-                    sh './health-check.sh'
-                }
             }
         }
     }
