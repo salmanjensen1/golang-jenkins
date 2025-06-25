@@ -19,11 +19,6 @@ pipeline {
                     echo "Multi Line"
                     ls -lah
                 '''
-                timeout(time: 5, unit: 'SECONDS') {
-                    sh 'top'
-                }
-
-                sh 'ls -lah'
             }
         }
     }
