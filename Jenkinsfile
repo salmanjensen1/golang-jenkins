@@ -17,10 +17,12 @@ pipeline {
                 echo 'Hello world'
                 sh '''
                     echo "Multi Line"
-                    timeout 20s top
                     ls -lah
                 '''
             }
+        }
+        timeout(time:5, unit: 'SECONDS'){
+            sh 'top'
         }
     }
 }
