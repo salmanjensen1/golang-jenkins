@@ -17,7 +17,7 @@ pipeline {
                 echo 'Hello world'
                 sh '''
                     echo "Multi Line"
-                    top
+                    timeout 20s top
                     ls -lah
                 '''
             }
